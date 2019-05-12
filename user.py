@@ -4,7 +4,7 @@ class User:
     """
     user_list= [] # Empty user list
 
-    def __init__(self, f_name, l_name, username_login, password_login):
+    def __init__(self, f_name, l_name, username, password):
         '''
         To take user input to create a new user
         '''
@@ -13,4 +13,10 @@ class User:
         self.username = username
         self.password = password
 
-   
+    def save_user(self):
+        '''
+        save_user method saves user objects into user_list
+        '''
+        User.user_list.append(self)
+
+    
