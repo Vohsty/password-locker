@@ -59,7 +59,8 @@ username_login
 
     def test_find_user_by_username(self):
         '''
-        test to check if we can find a user by username and display information
+        test to check if we can find a user by username and display information about
+        the user
         '''
 
         self.new_user.save_user()
@@ -67,6 +68,16 @@ username_login
         test_user.save_user()
         found_user = User.find_by_username("u_name")
         self.assertEqual(found_user.username,test_user.username)
+
+    def test_user_exists(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the user.
+        '''
+        self.new_user.save_user()
+        test_user = User("f_name", "l_name", "u_name", "pass")
+        test_user.save_user()
+        user_exists = User.user_exist("u_name")
+        self.assertTrue(user_exists)
 
 if __name__ == '__main__':
     unittest.main()
