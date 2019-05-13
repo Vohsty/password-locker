@@ -219,4 +219,68 @@ def main():
                                 print ("The credential does not exist")
                                 print('\n')
 
-                       
+                        elif acc_nav == 'vc':
+                            print('\n')
+                            print("Enter the account you want to search for")
+                            print('\n')
+                            find_name = input()
+                            search_cred = find_credential(username, find_name)
+                            if check_existing_credential(find_name):
+                                print('\n')
+                                print(f"{search_cred.account}")
+                                print('-'*20)
+                                print(f"Username.......{search_cred.acc_username}")
+                                print(f"Password.......{search_cred.acc_password}")
+                                print('\n')
+                            else:
+                                print('\n')
+                                print("That credential does not exist")
+                                print('\n')
+
+                        elif acc_nav == 'va':
+                            if display_credentials():
+                                print('\n')
+                                print("Here are your credentials:")
+                                print('\n')
+
+                                for credentials in display_credentials():
+                                    if credentials.username == username:
+                                        print('\n')
+                                        print(f"{credentials.account} -- Username: {credentials.acc_username} | Password: {credentials.acc_password}")
+                                        print('\n')
+                            else:
+                                print('\n')
+                                print("No credentials available")
+                                print('\n')
+
+                        elif acc_nav == 'lo':
+                            print('\n')
+                            print("logged out successfully. See you next time!")
+                            print('\n')
+                            break
+
+                        else:
+                            print('\n')
+                            print("Please use one of the navigation shortcodes provided")
+                            print('\n')
+
+                else:
+                    print('\n')
+                    print("Sorry, wrong password")
+            else:
+                print('\n')
+                print("Account does not exist")
+                print('\n')
+
+        elif short_code == 'exa':
+            print('\n')
+            print('Bye')
+            break
+        else:
+            print('\n')
+            print("Please use one of the shortcodes provided")
+            print('\n')
+
+if __name__ == '__main__':
+
+    main()
