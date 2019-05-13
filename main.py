@@ -72,3 +72,16 @@ def display_credentials():
     '''
     return Credentials.display_credentials()
 
+def generate_password(length):
+    pwd = []
+    count = 0
+    while (count < length/3):
+        pwd.append(random.choice(string.ascii_lowercase))
+        pwd.append(random.choice(string.ascii_uppercase))
+        pwd.append(str(random.randint(0,9)))
+        count = count + 1
+    random.shuffle(pwd)
+    return ''.join(pwd)
+
+
+
