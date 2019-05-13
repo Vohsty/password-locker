@@ -85,3 +85,5 @@ def generate_password(length):
 
 
 
+def main():
+    
