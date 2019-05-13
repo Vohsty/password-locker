@@ -29,3 +29,46 @@ def find_user(username):
     '''
     return User.find_by_username(username)
 
+def check_existing_users(username):
+    '''
+    Function to check is a user exists with that username and return a Boolean
+    '''
+    return User.user_exist(username)
+
+def create_credential(username, account, acc_username, acc_password):
+    '''
+    Function to create new credentials
+    '''
+    new_credential = Credentials(username, account, acc_username, acc_password)
+    return new_credential
+
+def save_credential(credentials):
+    '''
+    Function to save credentials
+    '''
+    credentials.save_credential()
+
+def delete_credential(credentials):
+    '''
+    Function to delete cred
+    '''
+    credentials.delete_credential()
+
+def find_credential(username, account):
+    '''
+    Function that finds a credential by username and returns the credential
+    '''
+    return Credentials.find_by_account(username, account)
+
+def check_existing_credential(username):
+    '''
+    Function to check is a credential exists with that username and return a Boolean
+    '''
+    return Credentials.credential_exist(username)
+
+def display_credentials():
+    '''
+    Function that returns all saved credentials
+    '''
+    return Credentials.display_credentials()
+
