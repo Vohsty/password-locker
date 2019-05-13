@@ -149,4 +149,49 @@ def main():
                 if (password == search_user.password):
                     print(f"Welcome {search_user.f_name} {search_user.l_name}")
 
-                    
+                    while True:
+                        print('\n')
+                        print('\n')
+                        print("What would you like to do: cc - create a new credential, dc - delete credential, vc - view credential, va - view all credentials, lo - log out")
+                        acc_nav = input()
+
+                        if acc_nav == 'cc':
+                            print ("Account type eg. Github ....")
+                            account = input()
+
+                            print("Account username ...")
+                            acc_username = input()
+
+                            print("Account password...")
+                            print("Would you like an auto generated Password?")
+                            print("y - Yes, n - No")
+                            decision = input().lower()
+                            if decision == 'y':
+                                print('\n')
+                                print("Please enter desired password length")
+                                try:
+                                    length = int(input())
+                                except ValueError:
+                                    print("Only numbers accepted")
+                                    break
+                                acc_password = generate_password(length)
+                                print('\n')
+                                print(f"Your new password for {account} is {acc_password}.")
+                            elif decision == 'n':
+                                print('\n')
+                                print("Please enter your new password")
+                                acc_password = input()
+                            else:
+                                print('\n')
+                                print("Use either y or n")
+                                print('\n')
+
+                            print('\n')
+                            save_credential(create_credential(username, account, acc_username, acc_password))
+                            print('\n')
+
+                            print('\n')
+                            print(f"New Credentials for {account} created")
+                            print('\n')
+
+                        
