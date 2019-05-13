@@ -118,4 +118,35 @@ def main():
             print(f"New User {f_name} {l_name} created")
             print('\n')
 
-        
+        elif short_code == 'da':
+            print('Enter the username of the account you would like to delete')
+            delete_name = input()
+            if check_existing_users(delete_name):
+                search_user = find_user(delete_name)
+                print("Enter your password")
+                password = input()
+                if password == search_user.password_login:
+                    print(f"Are you sure you want to delete {search_user.f_name} {search_user.l_name}")
+                    print("y - yes, n - no")
+                    yesNo = input().lower()
+                    if yesNo == 'y':
+                        delete_user(search_user)
+                        print(f"{search_user.f_name} {search_user.l_name} has been deleted")
+                    elif yesNo == 'n':
+                        print("User still present")
+            else:
+                print("Account does not exist")
+
+
+        elif short_code == 'li':
+            print("Welcome to log in")
+            print("Enter your username: ")
+            username = input()
+            if check_existing_users(username):
+                print("Enter your password:")
+                password = input()
+                search_user = find_user(username)
+                if (password == search_user.password):
+                    print(f"Welcome {search_user.f_name} {search_user.l_name}")
+
+                    
