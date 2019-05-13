@@ -25,3 +25,17 @@ Run the application:
     $ chmod +x main.py
     $ ./main.py
 
+## Know Bugs
+No known bugs. If found email me at vohsty@gmail.com
+
+## Technologies Used
+Python 3.6
+
+## Behaviour driven development/ input and output checking
+The user will be able to log in and perform the following functions:
+
+* Create an account with login details
+* Store existing login credentials
+* Add login credentials
+* View all login credentials
+* Search for specific credentials
