@@ -194,4 +194,29 @@ def main():
                             print(f"New Credentials for {account} created")
                             print('\n')
 
-                        
+                        elif acc_nav == 'dc':
+                            print('Enter the account name of the credential you would like to delete')
+                            delete_name = input()
+                            if check_existing_credential(delete_name):
+                                search_cred = find_credential(username, delete_name)
+                                print(f"Are you sure you want to delete {search_cred.account} credentials")
+
+                                print('\n')
+                                print("y - Yes, n - No")
+                                print('\n')
+                                decision = input().lower()
+                                if decision == 'y':
+                                    delete_credential(search_cred)
+                                    print('\n')
+                                    print(f"{search_cred.account} credentials have been deleted")
+                                    print('\n')
+                                else:
+                                    print('\n')
+                                    print("Credentials still available")
+                                    print('\n')
+                            else:
+                                print('\n')
+                                print ("The credential does not exist")
+                                print('\n')
+
+                       
