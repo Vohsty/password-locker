@@ -39,3 +39,6 @@ The user will be able to log in and perform the following functions:
 * Add login credentials
 * View all login credentials
 * Search for specific credentials
+
+## License
+MIT License Copyright (c) Steve Kimanthi
