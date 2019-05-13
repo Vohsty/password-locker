@@ -86,4 +86,36 @@ def generate_password(length):
 
 
 def main():
-    
+    print("Hello, welcome to Password Locker.")
+
+    while True:
+        print('\n')
+        print("Use the following short codes for navigation: ca - create a new account, da - delete your account, li - log in to your account, ex - exit application")
+        short_code = input()
+        if short_code == 'ca':
+            print('Please fill in the following details to create a new account')
+            print("New User")
+            print("-"*10)
+
+            print ("First name ....")
+            f_name = input()
+
+            print("Last name ...")
+            l_name = input()
+
+            print("Username...")
+            username = input()
+
+            print("Ensure your password ")
+            print("Password ...")
+            password = input()
+
+            print('\n')
+            save_user(create_user(f_name, l_name, username, password))
+            print('\n')
+
+            print('\n')
+            print(f"New User {f_name} {l_name} created")
+            print('\n')
+
+        
